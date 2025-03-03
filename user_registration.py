@@ -35,7 +35,7 @@ def get_user_input():
                             break
                         else:
                             print("\nPassword Invalid, Try again.!!!")
-                            print("Hint: Password should have minimum 8 characters.\n")
+                            print("Hint: Password should have minimum 8 characters and Must contain atleast 1 uppercase letter.\n")
                     else:
                         print("\nMobile Number Invalid, Try again.!!!")
                         print("Hint: Mobile number should be 10 digits number.\n")
