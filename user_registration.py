@@ -70,8 +70,6 @@ def main():
             break
         else:
             print("First name is invalid. Try again.!!! \nHint: Name should start with capital letter and should have minimum 3 characters.")
-    
-    
 
 
 if __name__ == '__main__':
