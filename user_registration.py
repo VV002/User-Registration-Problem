@@ -38,5 +38,6 @@ def main():
     print("-----------------User Details-----------------".center(width))
     print(f"Name : {first_name}")
 
+
 if __name__ == '__main__':
     main()
