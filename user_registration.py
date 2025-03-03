@@ -43,7 +43,7 @@ def validate_email(email):
         True : If the email is valid.
         False : If the email is invalid.
     """
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    pattern = r'^[a-zA-Z0-9._%+&#-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     return bool(re.match(pattern, email))
     
 def print_result(first_name, last_name, email):
