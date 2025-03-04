@@ -13,41 +13,51 @@ def get_user_input():
         list : User input
     """
     #loop to get the valid user input
-    while True:
-        ls = [] #list to store user details
-        first_name = input("Enter your first name: ")        
-        if first_name_validation(first_name): #validating first name
-            ls.append(first_name)
-            last_name = input("Enter your last name: ")
-            if last_name_validation(last_name): #validating last name
-                ls.append(last_name)
+    ls =[]
+    i=1
+    while i<6:
+        match i:
+            case 1:
+                first_name = input("Enter your first name: ")
+                if first_name_validation(first_name): #validating first name
+                    ls.append(first_name)
+                    i+=1
+                else:
+                    print("\nInvalid First name, Try again.!!!")
+                    print("Hint: Fist Name should start with capital letter and should have minimum 3 characters.\n")
+            case 2:
+                last_name = input("Enter your last name: ")
+                if last_name_validation(last_name): #validating last name
+                    ls.append(last_name)
+                    i+=1
+                else:
+                    print("\nInvalid Last name, Try again.!!!")
+                    print("Hint: Last Name should start with capital letter and should have minimum 3 characters.\n")
+            case 3:
                 email = input("Enter your email: ")
                 if validate_email(email): #validating email
                     ls.append(email)
-                    mobile_number = input("Enter your mobile number: ")
-                    if validate_mobile_number(mobile_number): #validating mobile number
-                        ls.append(mobile_number)
-                        password = input("Enter your password: ")
-                        if validate_password(password): #validating password
-                            ls.append(password)
-                            print("Valid Input.")
-                            return ls
-                            break
-                        else:
-                            print("\nPassword Invalid, Try again.!!!")
-                            print("Hint: Password should have minimum 8 characters and Must contain atleast 1 uppercase letter.\n")
-                    else:
-                        print("\nMobile Number Invalid, Try again.!!!")
-                        print("Hint: Mobile number should be 10 digits number.\n")
+                    i+=1
                 else:
                     print("\nEmail Invalid, Try again.!!!")
                     print("Hint: Email should be in proper format.\n")
-            else:
-                print("\nLast name Invalid, Try again.!!!")
-                print("Hint: Last Name should start with capital letter and should have minimum 3 characters.\n")
-        else:
-            print("\nFirst name Try again.!!!")
-            print("Hint: Fist Name should start with capital letter and should have minimum 3 characters.\n")
+            case 4:
+                mobile_number = input("Enter your mobile number: ")
+                if validate_mobile_number(mobile_number): #validating mobile number
+                    ls.append(mobile_number)
+                    i+=1
+                else:
+                    print("\nMobile Number Invalid, Try again.!!!")
+                    print("Hint: Mobile Number should have 10 digits.\n")
+            case 5:
+                password = input("Enter your password: ")
+                if validate_password(password): #validating password
+                    ls.append(password)
+                    i+=1
+                else:
+                    print("\nPassword Invalid, Try again.!!!")
+                    print("Hint: Password should have minimum 8 characters and Must contain atleast 1 uppercase letter & Special Character .\n")
+    return ls
 
 def first_name_validation(first_name):
     """
